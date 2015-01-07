@@ -16,8 +16,11 @@ module Mongoid
         super
       end
 
-      def setup(klass)
-        @klass = klass
+      if Rails::VERSION::STRING.to_f < 4
+        # in Rails 4 and above, this method is deprecated.
+        def setup(klass)
+          @klass = klass
+        end
       end
 
       def check_validity!

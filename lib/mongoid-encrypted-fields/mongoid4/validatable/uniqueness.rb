@@ -12,13 +12,12 @@ module Mongoid
       # Older versions of Mongoid's UniquenessValidator have a klass variable to reference the validating document
       # This was later replaced in ActiveModel with options[:class]
       def initialize(options={})
+        @klass = options[:class] if options.key?(:class)
         super
-        @klass = options[:class]
       end
 
       def setup(klass)
         @klass = klass
-        check_validity!
       end
 
       def check_validity!

@@ -10,6 +10,8 @@ matrix:
 gemfile:
   - .gemfiles/Gemfile.mongoid3
   - .gemfiles/Gemfile.mongoid4
+  - .gemfiles/Gemfile.mongoid4_rails41
+  - .gemfiles/Gemfile.mongoid4_rails42
   - .gemfiles/Gemfile.mongoid_head
 notifications:
   recipients:

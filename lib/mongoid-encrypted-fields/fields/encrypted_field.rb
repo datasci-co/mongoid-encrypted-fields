@@ -34,8 +34,8 @@ module Mongoid
             object
           else
             decrypted = is_encrypted?(object) ? decrypt(object) : object
-            decrypted = convert(decrypted)
             decrypted = decrypted.force_encoding("UTF-8") if decrypted.present?
+            convert(decrypted)
         end
       end
 
